@@ -39,6 +39,25 @@ $(function () {
     $('.utb_movie .right').on('click', function () {
         $('#bgndVideo').YTPPlay();
     })
+
+    $('.customer_tab .tab_menu>li').on('click', function () {
+        var idx = $(this).index();//0,1,2
+        $(this).addClass('on').siblings().removeClass('on')
+        $('.customer_tab .tab_content>div')
+            .eq(idx).addClass('on')
+            .siblings()
+            .removeClass('on');
+    })
+
+    $('#flink').on('change', function () {
+        var lik = $(this).val();
+        if (lik) window.open(lik)
+    })
+
+    $('.popup button').on('click', function () {
+        $(this).parent().hide();
+    })
+
 })
 
 
