@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호버효과</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: inherit;
+            font-weight: inherit;
+            box-sizing: border-box;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            line-height: 1;
+            color: #333;
+            text-align: center;
+        }
+
+        section {
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+            vertical-align: top;
+            /* inline이 포함되어 있을 경우에 사용가능(수직정렬) */
+            margin: 20px;
+        }
+
+        section figure {
+            width: 100%;
+            height: 100%;
+        }
+
+        section figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .items01 {
+            position: relative;
+        }
+
+        .items01 .info {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(255, 239, 195);
+            opacity: 0;
+            /* 투명도 0~1 */
+            transition: 0.5s;
+
+        }
+
+        .items01 .info div {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            text-align: center;
+
+        }
+
+        .items01 .info div h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 17px;
+        }
+
+        .items01 .info div a {
+            display: block;
+            width: 120px;
+            padding: 10px 0;
+            background-color: rgb(255, 220, 106);
+            color: rgb(255, 255, 255);
+            margin: 20px auto 0px;
+        }
+
+        .items01:hover .info {
+            opacity: 1;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* *****************.items02 *****************************/
+        .items02 {
+            position: relative;
+        }
+
+        .items02 figure {
+            transition: 0.5s;
+        }
+
+        .items02 .info {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(241, 211, 182);
+            text-align: center;
+            z-index: -1;
+            /* 앞뒤 위치 변경 기본값이 0양수,음수
+            position 값이 있을때만 사용가능
+            position 값이 없을 경우 position: relative;*/
+        }
+
+        .items02 .info div {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+        }
+
+        .items02 .info div h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 17px;
+        }
+
+        .items02 .info div a {
+            display: block;
+            width: 120px;
+            padding: 10px 0;
+            background-color: rgb(190, 160, 94);
+            color: #fff;
+            margin: 20px auto 0;
+            /* margin-top: 20px; */
+        }
+
+        .items02:hover figure {
+            transform: translateY(-165px);
+        }
+
+        /* *****************.items03 *****************************/
+        .items03 {
+            position: relative;
+        }
+
+        .items03 figure {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+
+        }
+
+        .items03 figure img {
+
+            /* position: relative;
+            top: -70px;
+            left: 0; */
+            transform: scale(50%);
+            transition: 1s;
+        }
+
+        .items03 .info {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(220, 226, 210);
+            text-align: center;
+
+        }
+
+        .items03 .info div {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+        }
+
+        .items03 .info div h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 17px;
+        }
+
+        .items03 .info div a {
+            display: block;
+            width: 120px;
+            padding: 10px 0;
+            background-color: rgb(162, 196, 158);
+            color: #fff;
+            margin: 20px auto 0;
+        }
+
+        .items03:hover figure img {
+            /*  position: relative;
+            top: 10px;
+            left: 0; */
+            transform: scale(180%);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="items01">
+        <figure>
+            <img src="img/coffee01.jpg" alt="커피">
+        </figure>
+        <div class="info">
+            <div>
+                <h4>coffee - 1</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit dolorum ad repellendus atque.
+                </p>
+                <a href="#">button</a>
+            </div>
+        </div><!-- info end  -->
+    </section><!-- items01 end -->
+    <section class="items02">
+        <figure>
+            <img src="img/coffee02.jpg" alt="커피">
+        </figure>
+        <div class="info">
+            <div>
+                <h4>coffee - 2</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit dolorum ad repellendus atque.
+                </p>
+                <a href="#">button</a>
+            </div>
+        </div><!-- info end  -->
+    </section><!-- items02 end -->
+    <section class="items03">
+        <figure>
+            <img src="img/coffee03.jpg" alt="커피">
+        </figure>
+        <div class="info">
+            <div>
+                <h4>coffee - 3</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit dolorum ad repellendus atque.
+                </p>
+                <a href="#">button</a>
+            </div>
+        </div><!-- info end  -->
+    </section><!-- items03 end -->
+</body>
+
+</html>
